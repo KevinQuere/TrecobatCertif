@@ -1,0 +1,201 @@
+html,body{
+	margin: 0;
+	border: 0;
+	background-color: #e0e0e0;
+	font-size: 100%;
+	font-family: "Verdana", sans-serif;
+}
+
+.container{
+	position: absolute;
+	height: 40%;
+	width: 60%;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%,-50%); 
+}
+.logo{
+   position: absolute;
+   width: 60%;
+   height: 60%;
+   background-image:url('https://www.trecobat.fr/wp-content/themes/trecobat/img/logo-trecobat.svg');
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.textbox{
+	position: absolute;
+	/* top: calc(80% - 20px); */
+	/* height: calc(20% + 20px); */
+	top: 80%;
+	height: 20%;
+	left: 0;
+	width: 100%;
+}
+
+.textbox2{
+	position: absolute;
+	text-align: center;
+	/* top: calc(80% - 20px); */
+	/* height: calc(20% + 20px); */
+	bottom: 10%;
+	height: 20%;
+	left: 0;
+	width: 100%;
+	color: #0f1b3a;
+}
+
+.textbox form input{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 80%;
+	height: 50%;
+	border-radius: 30px;
+	border: solid 2px #e74011;
+	outline: none;
+	text-indent: 15px;
+}
+
+.menu{
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*height: 70px;*/
+	height: 10%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	border-bottom: 2px solid #e74011;
+}
+
+footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	/*height: 70px;*/
+	height: 10%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	border-top: 2px solid #e74011;
+	text-align: center;
+	color: #2f4d96;
+	display: table;
+}
+
+footer span {
+	vertical-align:middle;
+	display: table-cell;
+}
+
+.linkmenu{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	/*height: 40px;*/
+	width: 100%;
+	/*display: inline;*/
+	vertical-align:middle;
+	display: table-cell;
+	text-align: center;
+}
+.linkmenu span{
+	margin-left: 8px;
+	margin-right: 8px;
+	display: inline;
+	color: #2f4d96;
+}
+.linkmenu span a{
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #2f4d96;
+	font-size: 1.5em;
+	border: 2px solid #2f4c96;
+	background-color: #ffffff69;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	border-radius: 12px;
+}
+.linkmenu span a:hover{
+	background-color: #ffffffa2;
+}
+.listperson{
+	position: absolute;
+	top: 70px;
+	height: calc(100% - 70px);
+	width: 100%;
+	left: 0;
+}
+.listallperso{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.affiall{
+	position: relative;
+	width: calc(100% - 40px);
+	background: rgba(0, 0, 0, 0.2);
+	height: 27%;
+	margin-top: 20px;
+	margin-left: 20px;
+	border: solid hsla(223, 52%, 39%, 0.2) 1px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+.affialltitre{
+	position: relative;
+	width: calc(100% - 40px);
+	background: rgba(0, 0, 0, 0.2);
+	height: 40px;
+	margin-top: 20px;
+	margin-left: 20px;
+	border: solid #e74011 2px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.affialllab{
+	position: absolute;
+	color: #2f4d96;
+	top: 50%;
+	left: 5%;
+	transform: translate(0%,-50%);
+}
+.affialllab a{
+	color: #2f4d96;
+}
+.graphtextbox{
+	height: 100%;
+	width: 100%;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background: rgba(0, 0, 0, 0.05);
+	border: none;
+	color: #2f4d96;
+	outline:none;
+	text-indent: 15px;
+}
+.labeladdun{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #2f4d96;
+}
+.sepaaffiall{
+	position: relative;
+	width: 100%;
+	background: rgba(0, 0, 0, 0);
+	height: 40px;
+}
