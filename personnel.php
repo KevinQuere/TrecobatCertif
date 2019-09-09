@@ -20,17 +20,33 @@ include 'pdo.php';
 	</header>
 
 	<div class="listperson">
-		<?php
-		$result = $conn->query('SELECT * FROM personnel ORDER BY id ASC');
+        <?php
+        $date_aujourdhui = new DateTime('today');
+        $result = $conn->query('SELECT * FROM personnel ORDER BY id ASC');
       while($a = $result->fetch()) 
       { 
-      	$stat = $a['statut'];
 
-      	if (stripos($stat, '1') !== FALSE) {
-      		$infostatut = "Congés: oui";
-      	}else{
-			$infostatut = "Congés: non";
-      	}
+    $result2 = $conn->query('SELECT * FROM conge ORDER BY id ASC');
+      while($b = $result2->fetch()) 
+      { 
+          if (stripos($a['id'], $b['idmembre']) !== FALSE) {
+
+        $daystart = new DateTime($b['date_debut_conge']);
+        $dayend = new DateTime($b['date_fin_conge']);
+
+          if ($date_aujourdhui->format('d/m/Y') >= $daystart->format('d/m/Y') AND $date_aujourdhui->format('d/m/Y') <= $dayend->format('d/m/Y')) {
+              $infostatut = "Congés: oui";
+          }
+          else{
+              $infostatut = "Congés: non";
+          }
+
+          }
+          else{
+              $infostatut = "Congés: non";
+          }
+
+         }
 
       	echo "<div class=\"affiall\">";
 		echo "<label class=\"affialllab\">
