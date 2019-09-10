@@ -22,11 +22,11 @@ include 'pdo.php';
 	<div class="listperson">
         <?php
         $date_aujourdhui = new DateTime('today');
-		$result = $conn->query('SELECT * FROM personnel ORDER BY id ASC');
-		$result2 = $conn->query('SELECT * FROM conge ORDER BY id ASC');
+        $result = $conn->query('SELECT * FROM personnel ORDER BY id ASC');
       while($a = $result->fetch()) 
       { 
 
+      $result2 = $conn->query('SELECT * FROM conge ORDER BY id ASC');
       while($b = $result2->fetch()) 
       { 
           if (stripos($a['id'], $b['idmembre']) !== FALSE) {
