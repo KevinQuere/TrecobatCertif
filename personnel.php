@@ -37,9 +37,9 @@ include 'pdo.php';
           if ($date_aujourdhui->format('d-m-Y') >= $daystart->format('d-m-Y') AND $date_aujourdhui->format('d-m-Y') <= $dayend->format('d-m-Y')) {
               $infostatut = "Congés: oui";
           }
-          else{
-              $infostatut = "Congés: non";
-          }
+		else
+			  $infostatut = "Congés: non";
+          
 
           }
           else{
