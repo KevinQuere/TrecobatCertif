@@ -42,9 +42,9 @@ include 'pdo.php';
           }
 
           }
-          else{
+          /*else{
               $infostatut = "Congés: non";
-          }
+          }*/
 
          }
 
