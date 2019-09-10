@@ -6,11 +6,10 @@ if (isset($_POST['val'])) {
 	$prenom = $_POST['prenomperson'];
 	$poste = $_POST['posteperson'];
 	$agence = $_POST['agenceperson'];
-	$statut = $_POST['statutperson'];
 
 	if (!empty($nom) AND !empty($prenom) AND !empty($poste) AND !empty($agence) AND !empty($statut)) {
-                                $insertmbr = $conn->prepare("INSERT INTO personnel(nom,prenom,poste,statut,agence) VALUES (?,?,?,?,?)");
-                                $insertmbr->execute(array($_POST['nomperson'], $_POST['prenomperson'], $_POST['posteperson'], $_POST['statutperson'], $_POST['agenceperson']));
+                                $insertmbr = $conn->prepare("INSERT INTO personnel(nom,prenom,poste,agence) VALUES (?,?,?,?)");
+                                $insertmbr->execute(array($_POST['nomperson'], $_POST['prenomperson'], $_POST['posteperson'], $_POST['agenceperson']));
             } else {
                 echo "Erreur";
             }
@@ -69,15 +68,6 @@ if (isset($_POST['val2'])) {
 
 		<div class="affiall">
 		<input class="graphtextbox" type="text" name="agenceperson" placeholder="Agence:">
-		</div>
-
-		<div class="affiall">
-		 <!-- <input class="graphtextbox" type="text" name="statutperson" placeholder="Statut:"> -->
-			<select class="graphtextbox" name="statutperson">
-				<option value ="" selected>Statut d'activité</option>
-				<option value ="1">En congé</option>
-				<option value ="2">Actif</option>
-			</select>
 		</div>
 
 		<div class="affiall">
