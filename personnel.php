@@ -20,34 +20,31 @@ include 'pdo.php';
 	</header>
 
 	<div class="listperson">
-    <?php
-
+        <?php
         $date_aujourdhui = new DateTime('today');
-		$result = $conn->query('SELECT * FROM personnel ORDER BY id ASC');
-		
-	  while($a = $result->fetch()) 
-	  { 
-		$result2 = $conn->query('SELECT * FROM conge ORDER BY id ASC');
+        $result = $conn->query('SELECT * FROM personnel ORDER BY id ASC');
+      while($a = $result->fetch()) 
+      { 
 
-			while($b = $result2->fetch()) 
-		{ 
-			if (stripos($a['id'], $b['idmembre']) !== FALSE) {
+    $result2 = $conn->query('SELECT * FROM conge ORDER BY id ASC');
+      while($b = $result2->fetch()) 
+      { 
+          if (stripos($a['id'], $b['idmembre']) !== FALSE) {
 
-				$daystart = new DateTime($b['date_debut_conge']);
-				$dayend = new DateTime($b['date_fin_conge']);
+        $daystart = new DateTime($b['date_debut_conge']);
+        $dayend = new DateTime($b['date_fin_conge']);
 
-				if ($date_aujourdhui->format('d-m-Y') >= $daystart->format('d-m-Y') AND $date_aujourdhui->format('d-m-Y') <= $dayend->format('d-m-Y')) {
-					$infostatut = "Congés: oui";
-				}
-				
-				else{
-					$infostatut = "Congés: non";
-				}
+          if ($date_aujourdhui->format('Y-m-d') >= $daystart->format('Y-m-d') AND $date_aujourdhui->format('Y-m-d') <= $dayend->format('Y-m-d')) {
+              $infostatut = "Congés: oui";
+          }
+          else{
+              $infostatut = "Congés: non";
+          }
 
-				}
-				else{
-					$infostatut = "Congés: non";
-				}
+          }
+          else{
+              $infostatut = "Congés: non";
+          }
 
          }
 
