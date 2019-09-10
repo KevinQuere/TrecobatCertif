@@ -87,11 +87,11 @@ if (isset($_POST['val2'])) {
 		</div>
 
 		<div class="affiall">
-		<input class="graphtextbox" type="text" name="startconge" placeholder="Début: (Exemple: 04/03/2019)">
+		<input class="graphtextbox" type="date" name="startconge" placeholder="Début: (Exemple: 04/03/2019)">
 		</div>
 
 		<div class="affiall">
-		<input class="graphtextbox" type="text" name="finconge" placeholder="Fin: (Exemple: 10/06/2019)">
+		<input class="graphtextbox" type="date" name="finconge" placeholder="Fin: (Exemple: 10/06/2019)">
 		</div>
 
 		
