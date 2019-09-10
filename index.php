@@ -22,7 +22,7 @@ include 'pdo.php';
 	</header>
 
 	<div class="container">
-		<div class="logo"></div> <!-- Div qui sert pour afficher l'image en mode "protect" -->
+		<div class="logo"></div>
 		<div class="textbox">
 			<form method="GET" action="search.php">
 				<input type="text" name="q" placeholder="Rechercher..." autocomplete="off">

@@ -23,13 +23,36 @@ include 'pdo.php';
     $result = $conn->query('SELECT * FROM personnel WHERE nom LIKE "%'.$q.'%" OR prenom LIKE "%'.$q.'%" OR poste LIKE "%'.$q.'%" OR agence LIKE "%'.$q.'%" ORDER BY id ASC');
     while($a = $result->fetch()) 
       { 
-      	$stat = $a['statut'];
+		$result2 = $conn->query('SELECT * FROM conge ORDER BY id ASC');
+		while($b = $result2->fetch()) 
+		{ 
+			if (stripos($a['id'], $b['idmembre']) !== FALSE) {
+  
+		  $daystart = new DateTime($b['date_debut_conge']);
+		  $dayend = new DateTime($b['date_fin_conge']);
+  
+			if ($date_aujourdhui->format('d-m-Y') >= $daystart->format('d-m-Y') AND $date_aujourdhui->format('d-m-Y') <= $dayend->format('d-m-Y')) {
+				$infostatut = "Congés: oui";
+			}
+			else{
+				$infostatut = "Congés: non";
+			}
+  
+			}
+			else{
+				$infostatut = "Congés: non";
+			}
+  
+		   }
+		
+		/*$stat = $a['statut'];
 
       	if (stripos($stat, '0') !== FALSE) {
       		$infostatut = "Congés: non";
       	}else{
 			$infostatut = "Congés: oui";
-      	}
+		  }
+		  */
       	echo "<div class=\"affiall\">";
 		echo "<label class=\"affialllab\">
 		Id: ".$a['id']." <br> ".
