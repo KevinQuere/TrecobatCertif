@@ -23,7 +23,7 @@ include 'pdo.php';
     $result = $conn->query('SELECT * FROM personnel WHERE nom LIKE "%'.$q.'%" OR prenom LIKE "%'.$q.'%" OR poste LIKE "%'.$q.'%" OR agence LIKE "%'.$q.'%" ORDER BY id ASC');
     while($a = $result->fetch()) 
       { 
-		$result2 = $conn->query('SELECT * FROM conge ORDER BY id ASC');
+		/*$result2 = $conn->query('SELECT * FROM conge ORDER BY id ASC');
 		while($b = $result2->fetch()) 
 		{ 
 			if (stripos($a['id'], $b['idmembre']) !== FALSE) {
