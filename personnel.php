@@ -46,7 +46,7 @@ include 'pdo.php';
               $infostatut = "Congés: non";
           }
 
-         }
+         
 
       	echo "<div class=\"affiall\">";
 		echo "<label class=\"affialllab\">
@@ -59,7 +59,8 @@ include 'pdo.php';
 			<a href=\"modpersonnel.php?id=".$a['id']."\">Modifier le membre</a> / <a href=\"delmember.php?id=".$a['id']."\">Supprimer le membre</a>
 			</label>";
 		echo "</div>";
-     }
+	}
+    }
 		?>
 	</div>
 
