@@ -7,7 +7,7 @@ if (isset($_POST['val'])) {
 	$poste = $_POST['posteperson'];
 	$agence = $_POST['agenceperson'];
 
-	if (!empty($nom) AND !empty($prenom) AND !empty($poste) AND !empty($agence) AND !empty($statut)) {
+	if (!empty($nom) AND !empty($prenom) AND !empty($poste) AND !empty($agence)) {
                                 $insertmbr = $conn->prepare("INSERT INTO personnel(nom,prenom,poste,agence) VALUES (?,?,?,?)");
                                 $insertmbr->execute(array($_POST['nomperson'], $_POST['prenomperson'], $_POST['posteperson'], $_POST['agenceperson']));
             } else {
