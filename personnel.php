@@ -26,7 +26,7 @@ include 'pdo.php';
       while($a = $result->fetch()) 
       { 
 
-      $result2 = $conn->query('SELECT * FROM conge ORDER BY id ASC');
+      $result2 = $conn->query('SELECT * FROM conge ORDER BY idmembre ASC');
       while($b = $result2->fetch()) 
       { 
           if (stripos($a['id'], $b['idmembre']) !== FALSE) {
