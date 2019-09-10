@@ -20,7 +20,7 @@ include 'pdo.php';
 	<div class="listperson">
 <?php
 	$q = htmlspecialchars($_GET["q"]);
-    $result = $conn->query('SELECT * FROM personnel WHERE nom LIKE "%'.$q.'%" OR prenom LIKE "%'.$q.'%" OR poste LIKE "%'.$q.'%" OR agence LIKE "%'.$q.'%" ORDER BY id ASC');
+    $result = $conn->query('SELECT * FROM personnel WHERE nom LIKE "%'.$q.'%" OR prenom LIKE "%'.$q.'%" OR poste LIKE "%'.$q.'%" OR agence LIKE "%'.$q.'%"');
     while($a = $result->fetch()) 
       { 
 		$result2 = $conn->query('SELECT * FROM conge ORDER BY id ASC');
