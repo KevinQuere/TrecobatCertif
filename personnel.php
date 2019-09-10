@@ -34,7 +34,7 @@ include 'pdo.php';
         $daystart = new DateTime($b['date_debut_conge']);
         $dayend = new DateTime($b['date_fin_conge']);
 
-          if ($date_aujourdhui->format('Y-m-d') >= $daystart->format('Y-m-d') AND $date_aujourdhui->format('Y-m-d') <= $dayend->format('Y-m-d')) {
+          if ($date_aujourdhui->format('d-m-Y') >= $daystart->format('d-m-Y') AND $date_aujourdhui->format('d-m-Y') <= $dayend->format('d-m-Y')) {
               $infostatut = "Congés: oui";
           }
           else{
