@@ -16,7 +16,6 @@ if (isset($_GET['id']))
                $nom = $idresult['nom'];
                $prenom = $idresult['prenom'];
                $poste = $idresult['poste'];
-               $statut = $idresult['statut'];
                $agence = $idresult['agence'];
            }
        }
@@ -34,10 +33,9 @@ if (isset($_POST['val'])) {
 	$prenom = $_POST['prenomperson'];
 	$poste = $_POST['posteperson'];
 	$agence = $_POST['agenceperson'];
-	$statut = $_POST['statutperson'];
 
- 		$insertupdate = $conn->prepare('UPDATE personnel SET nom = ?, prenom = ?, poste = ?, statut = ?, agence = ?  WHERE id = ?');
-        $insertupdate->execute(array($nom,$prenom,$poste,$statut,$agence,$id));
+ 		$insertupdate = $conn->prepare('UPDATE personnel SET nom = ?, prenom = ?, poste = ?, agence = ?  WHERE id = ?');
+        $insertupdate->execute(array($nom,$prenom,$poste,$agence,$id));
         header('Location: personnel.php');
     }
     else{
@@ -91,15 +89,6 @@ if (isset($_POST['val'])) {
 
 		<div class="affiall">
 		<input class="graphtextbox" type="text" name="agenceperson" placeholder="Agence:" <?php echo 'value="'.$agence.'"'; ?>>
-		</div>
-
-		<div class="affiall">
-		<!-- <input class="graphtextbox" type="text" name="statutperson" placeholder="Statut:" <?php /*echo 'value="'.$statut.'"'; */?>>-->
-				 <select class="graphtextbox" name="statutperson" <?php echo 'value="'.$statut.'"'; ?>>
-				<option value ="" selected>Statut d'activité</option>
-				<option value ="1">En congé</option>
-				<option value ="2">Actif</option>
-			</select>
 		</div>
 
 		<div class="affiall">
